@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -11,5 +12,13 @@
   "plugins": ["import", "node", "promise", "standard", "prettier"],
   "rules": {
     "no-console": "warn"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["webpack.config.js"],
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    }
+  ]
 }
