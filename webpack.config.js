@@ -1,5 +1,6 @@
 // webpack.config.js
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   // 시작점을 src/index를 바라보게 한다.
@@ -21,5 +22,15 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.ts'], // import 할 때 확장자 생략 가능
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './public/index.html'),
+      filename: 'index.html',
+    }),
+  ],
+  devServer: {
+    hot: true,
+    open: true,
   },
 }

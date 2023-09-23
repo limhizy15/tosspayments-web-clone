@@ -1,5 +1,5 @@
-function add(a, b) {
-  return a + b
-}
+const $root = document.getElementById('root')
 
-console.log(add(3, 4))
+if ($root != null) {
+  $root.innerText = 'HELLO!'
+}
