@@ -1,0 +1,28 @@
+* {
+  font-size: medium;
+}
+
+.navbar__menu {
+  background-color: red;
+  padding: 8px 40px;
+  display: flex;
+  gap: 7px;
+}
+
+.navbar__item {
+  background-color: salmon;
+  cursor: pointer;
+  padding: 12px 10px;
+}
+
+.navbar__item:hover {
+  background-color: green;
+}
+
+.navbar__button {
+  border-style: none;
+  height: 42px;
+}
+
+.navbar__button:hover {
+}
