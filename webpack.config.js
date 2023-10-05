@@ -9,6 +9,7 @@ module.exports = {
     // 번들 결과물을 저장할 위치와 이름 설정
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -17,6 +18,10 @@ module.exports = {
         test: /\.(js|ts)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.(svg|jpeg|gif|jpg|png|fbx|glb|mp3)$/i,
+        type: 'asset/resource',
       },
     ],
   },
