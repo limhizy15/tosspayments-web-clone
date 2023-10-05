@@ -10,12 +10,36 @@ export const createRouter = (routerMap: RouterMap) => {
     navigate: (pathname: string) => {
       const foundRoute = _routerMap?.[pathname]
 
-      if (foundRoute) {
+      if (!!foundRoute) {
         history.pushState(null, '', foundRoute.path)
+
         if (!!$root) {
-          $root.innerHTML = foundRoute.html
+          const $main = document.getElementById('main')
+
+          if (!$main) {
+            const $newMain = document.createElement('main')
+            $newMain.id = 'main'
+            $newMain.innerHTML = foundRoute.html
+
+            $root.appendChild($newMain)
+          } else {
+            $main.innerHTML = foundRoute.html
+          }
         }
       }
     },
   }
 }
+
+const routerMap: RouterMap = {
+  home: {
+    path: '/home',
+    html: '<span>HOME</span>',
+  },
+  about: {
+    path: '/about',
+    html: '<span>ABOUT</span>',
+  },
+}
+
+export const router = createRouter(routerMap)
