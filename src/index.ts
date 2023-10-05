@@ -1,5 +1,6 @@
 import { navMenu } from './NavMenu'
-import { Router } from './router'
+import './reset.css'
+import './index.css'
 
 const $root = document.getElementById('root')
 
