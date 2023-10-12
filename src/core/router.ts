@@ -33,20 +33,22 @@ export class Router {
     const page = this.routes[path]
 
     const $root = document.getElementById('root') as HTMLElement
-    const $main = document.getElementById('main')
+    const $main = document.getElementById('main') as HTMLElement
+
+    let $newMain: HTMLElement
+
+    if (!$main) {
+      $newMain = document.createElement('main')
+      $newMain.id = 'main'
+      $root.appendChild($newMain)
+    } else {
+      $newMain = $main
+    }
 
     if (page == null) {
-      $root.innerHTML = `<h1>404</h1>`
+      $newMain.innerHTML = `<h1>404</h1>`
     } else {
-      if (!$main) {
-        const $newMain = document.createElement('main')
-        $newMain.id = 'main'
-        $newMain.innerHTML = page
-
-        $root.appendChild($newMain)
-      } else {
-        $main.innerHTML = page
-      }
+      $newMain.innerHTML = page
     }
   }
 }
