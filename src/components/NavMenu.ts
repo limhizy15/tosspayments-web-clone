@@ -8,8 +8,10 @@ export class NavMenu extends Component {
     <a href="/about" data-spa-link>B</a>
   </header>`
 
-  constructor({$parent}: ComponentProp) {
-    super({$parent})
+  constructor({ $parent }: ComponentProp) {
+    super({ $parent })
     this.$parent = $parent
+
+    this.render()
   }
 }
