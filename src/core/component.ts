@@ -8,7 +8,6 @@ export class Component {
 
   constructor({ $parent }: ComponentProp) {
     this.$parent = $parent
-    this.render()
   }
 
   render() {
