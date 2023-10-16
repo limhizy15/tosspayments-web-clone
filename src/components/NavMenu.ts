@@ -4,8 +4,8 @@ export class NavMenu extends Component {
   $parent: HTMLElement
 
   template: string = /*html*/ `<header id="header">
-    <a href="/home" data-spa-link>A</a>
-    <a href="/about" data-spa-link>B</a>
+    <a href="/" data-spa-link>HOME</a>
+    <a href="/fnq" data-spa-link>FNQ</a>
   </header>`
 
   constructor({ $parent }: ComponentProp) {
