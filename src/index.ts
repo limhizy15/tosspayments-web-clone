@@ -2,11 +2,13 @@ import { NavMenu } from './components/NavMenu'
 import './reset.css'
 import './index.css'
 import { Router } from './core/router'
+import { Component } from './core/component'
+import { HomePage } from './pages/home/HomePage'
+import { FnqPage } from './pages/fnq/FnqPage'
 
-// TODO: 컴포넌트로 맵핑하기
-const routerMap = {
-  '/home': '<span>HOME</span>',
-  '/about': '<span>ABOUT</span>',
+const routerMap: Record<string, typeof Component> = {
+  '/': HomePage,
+  '/fnq': FnqPage,
 }
 
 const $root = document.getElementById('root') as HTMLElement

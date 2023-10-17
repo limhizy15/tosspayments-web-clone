@@ -1,10 +1,12 @@
+
+import { Component } from './component'
+
 interface RouterProps {
-  // TODO: path에 맞는 string이 아닌 컴포넌트를 맵핑하도록
-  routes: Record<string, string>
+  routes: Record<string, typeof Component>
 }
 
 export class Router {
-  routes: Record<string, string>
+  routes: Record<string, typeof Component>
 
   constructor({ routes }: RouterProps) {
     this.routes = routes
@@ -48,7 +50,7 @@ export class Router {
     if (page == null) {
       $newMain.innerHTML = `<h1>404</h1>`
     } else {
-      $newMain.innerHTML = page
+      new page({ $parent: $newMain })
     }
   }
 }
